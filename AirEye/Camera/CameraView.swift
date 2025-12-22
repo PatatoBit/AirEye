@@ -30,7 +30,7 @@ struct CameraPreview: UIViewRepresentable {
         // Connect the session to the layer
         view.videoPreviewLayer.session = session
         view.videoPreviewLayer.videoGravity = .resizeAspectFill
-        view.videoPreviewLayer.connection?.videoOrientation = .portrait // Force portrait for phone apps
+//        view.videoPreviewLayer.connection?.videoOrientation = .portrait // Force portrait for phone apps
         
         return view
     }
