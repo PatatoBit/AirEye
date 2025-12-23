@@ -28,6 +28,7 @@ struct OnboardingView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
+            .fullFrameStyle()
             
             Spacer()
             
@@ -48,7 +49,7 @@ struct OnboardingView: View {
             }.padding()
             
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .fullFrameStyle()
         
     }
 }
