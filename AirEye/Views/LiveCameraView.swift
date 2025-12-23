@@ -13,40 +13,43 @@ struct LiveCameraView: View {
     
     var body: some View {
         NavigationStack {
-            if !hasCompletedOnboarding {
+            ZStack {
+                // Background: Live Camera
+                CameraPreview(session: cameraManager.session)
+                    .ignoresSafeArea()
                 
-                OnboardingView()
-            } else {
-                ZStack {
-                    // Background: Live Camera
-                    CameraPreview(session: cameraManager.session)
-                        .ignoresSafeArea()
-                    
-                    // Overlay: AQI Data
-                    VStack {
-                        Spacer()
-                        
-                        NavigationLink {
-                            AirQualityLevelsView()
+                VStack {
+                    HStack(alignment: .top) {
+                        Button {
+                            hasCompletedOnboarding = false
                         } label: {
-                            VStack {
-                                Text(AQIHelpers.getDescription(for: cameraManager.currentAQI))
-                                    .font(.system(size: 24, weight: .bold, design: .rounded))
-                                    .foregroundStyle(Color.white)
-                                
-                                Text("\(cameraManager.currentAQI)")
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.white)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding(8)
-                            .background(AQIHelpers.getColor(for: cameraManager.currentAQI))
-                            .cornerRadius(100)
-                            
+                            Image(systemName: "repeat")
                         }
                     }
-                    .padding(.bottom, 8)
+                    
+                    Spacer()
+                    
+                    // Overlay: AQI Data
+                    NavigationLink {
+                        AirQualityLevelsView()
+                    } label: {
+                        VStack {
+                            Text(AQIHelpers.getDescription(for: cameraManager.currentAQI))
+                                .font(.system(size: 24, weight: .bold, design: .rounded))
+                                .foregroundStyle(Color.white)
+                            
+                            Text("\(cameraManager.currentAQI)")
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(8)
+                        .background(AQIHelpers.getColor(for: cameraManager.currentAQI))
+                        .cornerRadius(100)
+                        
+                    }
                 }
+                .padding(.bottom, 8)
             }
         }
     }

@@ -9,22 +9,47 @@ import SwiftUI
 
 struct OnboardingView: View {
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = false
+    @State private var currentPage = 0
+    
+    private let slides = [
+        AnyView(Welcome()),
+        AnyView(ComputerVision()),
+        AnyView(FindingPatterns()),
+        AnyView(MachineLearning()),
+        AnyView(Recap())
+    ]
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Welcome to AirEye")
-                .font(.largeTitle)
-                .bold()
-                .fontDesign(.rounded)
+            TabView(selection: $currentPage) {
+                ForEach(0..<slides.count, id: \.self) { index in
+                    slides[index]
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .always))
             
             Spacer()
             
-            Button("Complete onboarding") {
-                    hasCompletedOnboarding = true
-            }
+            VStack {
+                PrimaryButton(title: currentPage < slides.count - 1 ? "Next" : "Start Demo") {
+                    if currentPage < slides.count - 1 {
+                        currentPage += 1
+                    } else {
+                        hasCompletedOnboarding = true
+                    }
+                }
+                
+                if currentPage < slides.count - 1 {
+                    PrimaryButton(title: "go straight into the demo") {
+                        hasCompletedOnboarding = true
+                    }
+                }
+            }.padding()
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-               
+        
     }
 }
 
