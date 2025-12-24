@@ -10,17 +10,23 @@ import SwiftUI
 struct LabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .foregroundStyle(.gray)
+            .font(.caption)
+            .fontWeight(.bold)
+            .foregroundColor(.secondary)
+            .textCase(.uppercase)
     }
 }
 
 struct HeadingStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .fontDesign(.rounded)
-            .font(.largeTitle)
+            .font(.largeTitle) // Replaced .headingStyle()
             .bold()
-            .padding(.bottom, 8)
+            .fontDesign(.rounded)
+        
+        
+        
+            
     }
 }
 

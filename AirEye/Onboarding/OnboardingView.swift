@@ -44,7 +44,7 @@ struct OnboardingView: View {
                     }
                 }
                 
-                if currentPage < slides.count - 1 {
+                if currentPage == 0  {
                     PrimaryButton(title: "go straight into the demo") {
                         hasCompletedOnboarding = true
                     }

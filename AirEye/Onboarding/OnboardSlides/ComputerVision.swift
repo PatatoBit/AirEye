@@ -13,15 +13,17 @@ struct ComputerVision: View {
             Text("Pixels = Numbers")
                 .labelStyle()
             
-            Text("How Computers See Images")
-                .headingStyle()
             
-            Text("Unlike humans, all computers see are just pixel values. Hold the image to see.")
-            
-            ImagePixelInspector(imageName: "example")
-                .frame(height: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-            
+            VStack(alignment: .leading, spacing: 20) {
+                Text("How Computers See Images")
+                    .headingStyle()
+                
+                Text("Unlike humans, all computers see are just pixel values. Hold the image to see.")
+                
+                ImagePixelInspector(imageName: "example")
+                    .frame(height: 300)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
             Spacer()
         }
         .padding()
