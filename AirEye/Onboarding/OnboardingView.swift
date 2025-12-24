@@ -13,6 +13,7 @@ struct OnboardingView: View {
     
     private let slides = [
         AnyView(Welcome()),
+        AnyView(Introduction()),
         AnyView(ComputerVision()),
         AnyView(FindingPatterns()),
         AnyView(MachineLearning()),
@@ -35,7 +36,9 @@ struct OnboardingView: View {
             VStack {
                 PrimaryButton(title: currentPage < slides.count - 1 ? "Next" : "Start Demo") {
                     if currentPage < slides.count - 1 {
-                        currentPage += 1
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            currentPage += 1
+                        }
                     } else {
                         hasCompletedOnboarding = true
                     }

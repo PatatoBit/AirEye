@@ -9,7 +9,25 @@ import SwiftUI
 
 struct Recap: View {
     var body: some View {
-        Text("To recap")
+        VStack(alignment: .leading) {
+            Text("Summary")
+                .labelStyle()
+            
+            
+            Text("To Recap")
+                .headingStyle()
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+            
+            Text("Before your AI could predict air quality, it studied thousands of images")
+            
+            Text("12,902 images from India, Nepal, and beyond")
+            
+            Text("Each image came with a label: the actual AQI number.")
+            
+            Spacer()
+        }
+        .fullFrameStyle()
+        .padding()
     }
 }
 

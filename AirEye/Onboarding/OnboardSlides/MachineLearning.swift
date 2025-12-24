@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MachineLearning: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading) {
             Text("From Examples to Expertise")
                 .labelStyle()
             
