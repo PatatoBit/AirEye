@@ -22,7 +22,7 @@ struct FindingPatterns: View {
                     .headingStyle()
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                 
-                    Text("Imagine giving your AI special glasses to see specific things.")
+                    Text("How does the model make sense of those numbers? It uses filters—mathematical lenses that scan the image to highlight meaningful features. ")
                         .font(.body)
                     
                     // MARK: - Interactive Component
@@ -30,7 +30,7 @@ struct FindingPatterns: View {
                     FilterLens(imageName: "example")
                         .padding(.vertical)
                     
-                    Text("A filter is a math trick that highlights one type of pattern.")
+                    Text("These filters strip away noise to focus on what matters, like the sharp edges of a building or the soft texture of smog.")
                         .font(.body)
                     
                     Text("By sliding the lens, you reveal the 'edges'—the hidden structure the computer uses to understand the world.")

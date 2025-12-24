@@ -23,6 +23,10 @@ struct ComputerVision: View {
                 ImagePixelInspector(imageName: "example")
                     .frame(height: 300)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
+                
+                
+               Text("Your phone camera captures 12+ million pixels in one photo. Each pixel is 3 numbers (Red, Green, Blue)")
+                Text("That's 36+ million numbers just to see one image!")
             }
             Spacer()
         }
