@@ -24,8 +24,9 @@ struct ComputerVision: View {
           .clipShape(RoundedRectangle(cornerRadius: 12))
 
         Text(
-          "Your phone camera captures 12+ million pixels in one photo. Each pixel is 3 numbers (Red, Green, Blue)"
+          "Your phone camera captures 12+ million pixels in one photo. "
         )
+        Text("Each pixel is 3 numbers (Red, Green, Blue).")
         Text("That's 36+ million numbers just to see one image!")
       }
       Spacer()
