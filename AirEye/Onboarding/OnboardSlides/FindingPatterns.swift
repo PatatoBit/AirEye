@@ -10,7 +10,6 @@ import SwiftUI
 struct FindingPatterns: View {
   var body: some View {
     VStack(alignment: .leading) {
-
       Text("The Filter Lens")
         .labelStyle()
 
@@ -18,7 +17,6 @@ struct FindingPatterns: View {
 
         Text("Finding Patterns Among Images")
           .headingStyle()
-          .frame(maxWidth: .infinity, alignment: .topLeading)
 
         Text(
           "How does it work? It uses filters—mathematical lenses that scan for features."
