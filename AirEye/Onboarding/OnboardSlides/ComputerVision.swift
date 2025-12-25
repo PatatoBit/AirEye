@@ -85,7 +85,7 @@ struct ImagePixelInspector: View {
             }
             .font(.system(.caption, design: .monospaced))
             .padding(8)
-            .background(.ultraThinMaterial)
+            .background(Color.black)
             .cornerRadius(8)
           }
           .position(x: dragLocation.x, y: dragLocation.y - 80)  // Floating above finger
