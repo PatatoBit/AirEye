@@ -14,14 +14,15 @@ struct FindingPatterns: View {
         .labelStyle()
 
       VStack(alignment: .leading, spacing: 20) {
-
         Text("Finding Patterns Among Images")
           .headingStyle()
+          .fixedSize(horizontal: false, vertical: true)
 
         Text(
           "How does it work? It uses filters—mathematical lenses that scan for features."
         )
         .font(.body)
+          .fixedSize(horizontal: false, vertical: true)
 
         FilterLens(imageName: "example")
           .padding(.vertical)
@@ -36,7 +37,6 @@ struct FindingPatterns: View {
         )
         .font(.footnote)
         .foregroundColor(.secondary)
-
       }
 
       Spacer()

@@ -8,18 +8,32 @@
 import SwiftUI
 
 struct PrimaryButton: View {
-    let title: String
-    let action: () -> Void
+  let title: String
+  let action: () -> Void
 
-    var body: some View {
-        Button(action: action) {
-            Text(title)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-        }
-        .background(Color.black)
-        .cornerRadius(16)
+  var body: some View {
+    Button(action: action) {
+      Text(title)
+        .font(.system(size: 17, weight: .semibold))
+        .foregroundColor(.white)
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
     }
+    .buttonStyle(.borderedProminent)
+  }
+}
+
+struct SecondaryButton: View {
+  let title: String
+  let action: () -> Void
+
+  var body: some View {
+    Button(action: action) {
+      Text(title)
+        .font(.system(size: 17, weight: .semibold))
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+    }
+    .buttonStyle(.bordered)
+  }
 }
