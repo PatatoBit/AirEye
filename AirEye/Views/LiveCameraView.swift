@@ -80,11 +80,10 @@ struct LiveCameraView: View {
       }
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
-          Button {
-            hasCompletedOnboarding = false
-          } label: {
-            Image(systemName: "repeat")
-          }
+          
+            NavigationLink(destination: AboutView(), label: {
+                Image(systemName: "info")
+            })
 
         }
       }

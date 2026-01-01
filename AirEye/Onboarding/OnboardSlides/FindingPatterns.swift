@@ -31,6 +31,8 @@ struct FindingPatterns: View {
           "Filters remove noise to focus on details like edges or textures."
         )
         .font(.body)
+        .fixedSize(horizontal: false, vertical: true)
+
 
         Text(
           "Slide the lens to see the 'edges' the computer sees."
