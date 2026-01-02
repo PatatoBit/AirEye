@@ -22,7 +22,7 @@ struct FindingPatterns: View {
           "How does it work? It uses filters—mathematical lenses that scan for features."
         )
         .font(.body)
-          .fixedSize(horizontal: false, vertical: true)
+        .fixedSize(horizontal: false, vertical: true)
 
         FilterLens(imageName: "example")
           .padding(.vertical)
@@ -32,7 +32,6 @@ struct FindingPatterns: View {
         )
         .font(.body)
         .fixedSize(horizontal: false, vertical: true)
-
 
         Text(
           "Slide the lens to see the 'edges' the computer sees."
